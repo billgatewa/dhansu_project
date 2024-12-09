@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आत्मबोध - Dashboard</title>
+    <link rel="stylesheet" href="rstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a style="text-decoration: none; color: white;" href="../index.html"><h2>आत्मबोध</h2></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html" class="active"><i class="fa-solid fa-home"></i> Dashboard</a></li>
+            <li><a href="test/test.html"><i class="fa-solid fa-pencil"></i> Take Test</a></li>
+            <li><a href="result.html"><i class="fa-solid fa-chart-line"></i> Review Results</a></li>
+            <li><a href="video-lessons.html"><i class="fa-solid fa-play-circle"></i> Video Lessons</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-header">
+            <h1>Welcome, Shaurya</h1>
+            <p>Overview of your tests and progress.</p>
+        </div>
+
+        <!-- Test Cards -->
+        <div class="test-list">
+            <div class="test-card">
+                <h3>Math Test UID 24001 Level 3</h3>
+                <p>Assigned: 05th Dec, 2024</p>
+                <div class="test-progress">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <button class="btn" onclick="window.location.href='test/test.html'">Take Test</button>
+                <button class="btn" onclick="window.location.href='result.html'">View Results</button>
+            </div>
+            <div class="test-card" hidden>
+                <h3>Science Test 2</h3>
+                <p>Assigned: 22nd Dec, 2024</p>
+                <div class="test-progress">
+                    <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+                <button class="btn" onclick="window.location.href='take-test.html'">Take Test</button>
+                 </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

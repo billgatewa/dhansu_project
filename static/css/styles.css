@@ -1,0 +1,125 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation Bar */
+  .navbar-nav {
+    justify-content: center; /* Centering navbar items */
+  }
+  
+  .nav-link {
+    color: black; /* Make navbar text black */
+    font-size: 1.2rem; /* Increased size */
+    font-weight: bold; /* Made text bold */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #007bff; /* Change color on hover to blue */
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+  }
+  
+  .btn-hover {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .btn-hover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hero Section - Background White and Dark Text */
+  .hero-section {
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text color */
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0; /* Add padding to space it out nicely */
+  }
+  
+  .animated-text {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .btn-primary {
+    background: #007bff;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+  
+  .animated-btn {
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s;
+  }
+  
+  /* Features Section */
+  .features-section {
+    background-color: #f8f9fa;
+  }
+  
+  .feature-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%; /* Ensuring all feature boxes are the same size */
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: rotate(10deg);
+  }
+  
+  /* Feature Boxes */
+  .feature-card {
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .feature-card h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  

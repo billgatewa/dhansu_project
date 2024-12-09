@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आत्मबोध - Results</title>
+    <link rel="stylesheet" href="rstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a style="text-decoration: none; color: white;" href="../index.html"><h2>आत्मबोध</h2></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fa-solid fa-home"></i> Dashboard</a></li>
+            <li><a href="test/test.html"><i class="fa-solid fa-pencil"></i> Take Test</a></li>
+            <li><a href="result.html" class="active"><i class="fa-solid fa-chart-line"></i> Review Results</a></li>
+            <li><a href="video-lessons.html"><i class="fa-solid fa-play-circle"></i> Video Lessons</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-header">
+            <h1>Your Results</h1>
+            <p>Analyze your performance and focus on improving weak areas.</p>
+        </div>
+
+        <!-- Test Result Card -->
+        <div class="test-result-card">
+            <h2>Math Test 1</h2>
+            <p>Completed: 20th Dec, 2024</p>
+
+            <div class="result-progress">
+                <span>Knowledge: 8/10</span>
+                <div class="progress-bar"><div style="width: 80%;"></div></div>
+                <span>Critical Thinking: 7/10</span>
+                <div class="progress-bar"><div style="width: 70%;"></div></div>
+                <span>Application: 5/10</span>
+                <div class="progress-bar"><div style="width: 50%;"></div></div>
+            </div>
+        </div>
+
+        <!-- Learning Suggestions Based on Performance -->
+        <div class="learning-suggestions">
+            <h3>Learning Suggestions</h3>
+            <div id="suggestions-list">
+                <!-- Dynamic suggestions will appear here based on performance -->
+            </div>
+        </div>
+
+        <!-- Performance Graph -->
+        <div class="performance-section">
+            <h3>Performance Percentile Over Time</h3>
+            <!-- Canvas for Chart.js -->
+            <canvas id="percentileChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Question Review -->
+        <div class="question-review">
+            <h3>Question Review</h3>
+            <ul>
+                <li>Q1: What is the cube root of 27? <br> <strong>Correct:</strong> 3 | <strong>Your Answer:</strong> 3</li>
+                <li>Q2: Simplify: (2x + 3x) - 4x <br> <strong>Correct:</strong> x | <strong>Your Answer:</strong> x</li>
+                <li>Q3: What is the value of π to 2 decimal places? <br> <strong>Correct:</strong> 3.14 | <strong>Your Answer:</strong> 3.14</li>
+                <li>Q4: Solve: 3² + 4² = ? <br> <strong>Correct:</strong> 25 | <strong>Your Answer:</strong> 25</li>
+                <li>Q5: What is the square root of 144? <br> <strong>Correct:</strong> 12 | <strong>Your Answer:</strong> 12</li>
+                <li>Q6: If a = 3 and b = 4, what is a² + b²? <br> <strong>Correct:</strong> 25 | <strong>Your Answer:</strong> 25</li>
+                <li>Q7: Factorize: x² - 9 <br> <strong>Correct:</strong> (x + 3)(x - 3) | <strong>Your Answer:</strong> (x + 3)(x - 3)</li>
+                <li>Q8: What is the value of 2⁵? <br> <strong>Correct:</strong> 32 | <strong>Your Answer:</strong> 32</li>
+                <li>Q9: Find the area of a triangle with base 5 cm and height 10 cm. <br> <strong>Correct:</strong> 25 cm² | <strong>Your Answer:</strong> 25 cm²</li>
+                <li>Q10: What is the perimeter of a square with side 6 cm? <br> <strong>Correct:</strong> 24 cm | <strong>Your Answer:</strong> 24 cm</li>
+            </ul>
+        </div>
+
+        <!-- Video Suggestions -->
+        <div class="video-suggestions">
+            <h3>Suggested Video Lessons</h3>
+            <div class="video-grid">
+                <div class="video-card">
+                    <img src="img1.jpg" alt="Video 1">
+                    <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                    <p>Understanding Math Basics</p>
+                </div>
+                <div class="video-card">
+                    <img src="thumbnail2.jpg" alt="Video 2">
+                    <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                    <p>Critical Thinking Skills</p>
+                </div>
+                <div class="video-card">
+                    <img src="thumbnail3.jpg" alt="Video 3">
+                    <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                    <p>Application in Math Problems</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Chart.js -->
+    <script>
+        // Data for the percentile graph
+        const ctx = document.getElementById('percentileChart').getContext('2d');
+
+        // Create gradient for smooth line color
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(75, 192, 192, 0.2)');
+        gradient.addColorStop(1, 'rgba(75, 192, 192, 1)');
+
+        const percentileChart = new Chart(ctx, {
+            type: 'line', // Line chart for percentile
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Time periods
+                datasets: [{
+                    label: 'Your Percentile',
+                    data: [75, 80, 85, 90, 93, 95], // Percentile performance over time
+                    borderColor: gradient, // Gradient color for the line
+                    borderWidth: 3,
+                    lineTension: 0.4, // Smooth curve
+                    fill: true, // Fill under the line
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)' // Background color for the filled area
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 100, // Percentiles range from 0 to 100
+                        ticks: {
+                            stepSize: 10, // Steps of 10 for better readability
+                        }
+                    }
+                }
+            }
+        });
+
+        // Dynamic Learning Suggestions based on performance
+        const suggestionsList = document.getElementById("suggestions-list");
+        const knowledgeScore = 8; // Example score for Knowledge
+        const criticalThinkingScore = 7; // Example score for Critical Thinking
+        const applicationScore = 5; // Example score for Application
+
+        // Adding suggestions based on score thresholds
+        if (knowledgeScore < 7) {
+            suggestionsList.innerHTML += "<p><strong>Suggestion:</strong> Review basic algebra and geometry concepts. Try solving simple equations and understand the fundamentals of geometry.</p>";
+        } else {
+            suggestionsList.innerHTML += "<p><strong>Suggestion:</strong> Good grasp on knowledge! Focus on advanced problem-solving techniques.</p>";
+        }
+
+        if (criticalThinkingScore < 7) {
+            suggestionsList.innerHTML += "<p><strong>Suggestion:</strong> Work on puzzles and problems that require logic and reasoning. Try analyzing patterns in numbers and shapes.</p>";
+        } else {
+            suggestionsList.innerHTML += "<p><strong>Suggestion:</strong> Excellent critical thinking! Focus on applying your skills in real-world problems.</p>";
+        }
+
+        if (applicationScore < 7) {
+            suggestionsList.innerHTML += "<p><strong>Suggestion:</strong> Practice more applied math problems. Try solving word problems that involve multiple steps.</p>";
+        } else {
+            suggestionsList.innerHTML += "<p><strong>Suggestion:</strong> Great application of concepts! Try exploring complex real-life scenarios for more practice.</p>";
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
