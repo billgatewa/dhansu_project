@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>आत्मबोध - Dashboard</title>
-    <link rel="stylesheet" href="rstyles.css">
+    <!--link rel="stylesheet" href="rstyles.css"-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        let cname = "userLoggedIn"
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+              let c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+        let username = getCookie("userLoggedIn");
+        console.log(username)
+        if (username != "") {
+            alert("Welcome again " + username);
+        } else {
+            document.write('code ki mkc')
+        }
+    </script>
     </head>
 <body>
     <!-- Sidebar -->
@@ -50,6 +75,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!--script src="script.js"></script-->
 </body>
 </html>
