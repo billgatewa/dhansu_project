@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>आत्मबोध - Results</title>
-    <link rel="stylesheet" href="rstyles.css">
+    <link rel="stylesheet" href="{% static 'css\rstyles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -82,17 +83,17 @@
             <h3>Suggested Video Lessons</h3>
             <div class="video-grid">
                 <div class="video-card">
-                    <img src="img1.jpg" alt="Video 1">
+                    <img src={% static "images/img1.jpg" %} alt="Video 1">
                     <div class="play-button"><i class="fa-solid fa-play"></i></div>
                     <p>Understanding Math Basics</p>
                 </div>
                 <div class="video-card">
-                    <img src="thumbnail2.jpg" alt="Video 2">
+                    <img src={% static "images/thumbnail2.jpg" %} alt="Video 2">
                     <div class="play-button"><i class="fa-solid fa-play"></i></div>
                     <p>Critical Thinking Skills</p>
                 </div>
                 <div class="video-card">
-                    <img src="thumbnail3.jpg" alt="Video 3">
+                    <img src={% static "images/thumbnail3.jpg" %} alt="Video 3">
                     <div class="play-button"><i class="fa-solid fa-play"></i></div>
                     <p>Application in Math Problems</p>
                 </div>

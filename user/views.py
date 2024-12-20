@@ -22,3 +22,7 @@ def dashboard(request):
     
     print("User is logged in with cookie:", user_cookie)
     return render(request, 'dashboard/dashboard.html')
+def test(request):
+    return render(request, 'dashboard/test/test.html')
+def result(request):
+    return render(request, 'dashboard/result.html')

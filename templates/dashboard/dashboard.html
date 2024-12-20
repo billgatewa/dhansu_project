@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>आत्मबोध - Dashboard</title>
-    <!--link rel="stylesheet" href="rstyles.css"-->
+    <link rel="stylesheet" href='{% static "css\rstyles.css" %}'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
         let cname = "userLoggedIn"
@@ -40,7 +41,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="dashboard.html" class="active"><i class="fa-solid fa-home"></i> Dashboard</a></li>
-            <li><a href="test/test.html"><i class="fa-solid fa-pencil"></i> Take Test</a></li>
+            <li><a href=""><i class="fa-solid fa-pencil"></i> Take Test</a></li>
             <li><a href="result.html"><i class="fa-solid fa-chart-line"></i> Review Results</a></li>
             <li><a href="video-lessons.html"><i class="fa-solid fa-play-circle"></i> Video Lessons</a></li>
         </ul>
@@ -61,7 +62,7 @@
                 <div class="test-progress">
                     <div class="progress-bar" style="width: 50%;"></div>
                 </div>
-                <button class="btn" onclick="window.location.href='test/test.html'">Take Test</button>
+                <button class="btn" onclick="window.location.href='test'">Take Test</button>
                 <button class="btn" onclick="window.location.href='result.html'">View Results</button>
             </div>
             <div class="test-card" hidden>
@@ -75,6 +76,6 @@
         </div>
     </div>
 
-    <!--script src="script.js"></script-->
+    <script src='{% static "js/script.js" %}'></script>
 </body>
 </html>
